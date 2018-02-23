@@ -1,0 +1,6 @@
+.SearchBarWrapper {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  margin: 20px auto;
+}
