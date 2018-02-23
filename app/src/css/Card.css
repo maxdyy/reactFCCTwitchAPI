@@ -1,0 +1,24 @@
+.anticon-github:hover {
+  color: #8b00e2 !important;
+}
+
+.anticon-close, .anticon-close:hover {
+  color: #e20000 !important;
+}
+
+.anticon-check, .anticon-check:hover {
+  color: #0be200 !important;
+}
+
+.anticon-play-circle:hover {
+  color: #008fe2 !important;
+}
+
+.ant-card-actions>li>span:hover {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.anticon {
+  transition: 0.45s;
+  font-size: 18px !important;
+}
