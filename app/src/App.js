@@ -9,11 +9,12 @@ class App extends Component {
     super(props);
 
     this.state = {
+      currentSearch: "",
       user: {},
       stream: {}
     };
 
-    this.userSearch('freecodecamp');
+    this.userSearch("freecodecamp");
   }
 
   userSearch(value) {
@@ -21,14 +22,17 @@ class App extends Component {
       return
     } else {
       value = value.replace(/\s/g, "");
-      axios.get(`https://wind-bow.glitch.me/twitch-api/channels/${value}`)
-           .then(data => this.setState({
-             user: data.data,
-           }));
-      axios.get(`https://wind-bow.glitch.me/twitch-api/streams/${value}`)
-           .then(data => this.setState({
-             stream: data,
-           }));
+      if (this.state.currentSearch !== value) {
+        this.setState({currentSearch: value})
+        axios.get(`https://wind-bow.glitch.me/twitch-api/channels/${value}`)
+             .then(data => this.setState({
+               user: data.data,
+             }));
+        axios.get(`https://wind-bow.glitch.me/twitch-api/streams/${value}`)
+             .then(data => this.setState({
+              stream: data,
+            }));
+      }
     }
   }
 
