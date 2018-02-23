@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Card, Icon, Avatar, Tooltip, Alert} from 'antd';
+import '../css/Card.css'
 const {Meta} = Card;
 
 class UserCard extends Component {
@@ -49,6 +50,12 @@ class UserCard extends Component {
            </Tooltip>,
            <Tooltip placement="bottom" title={isLive ? userStream.game : "channel offline"}>
              <Icon type={isLive ? "check" : "close"}/>
+           </Tooltip>,
+           <Tooltip placement="bottom" title="source code">
+             <Icon
+               type="github"
+               onClick={() => window.open("https://github.com/maxdyy/reactFCCTwitchAPI", "_blank")}
+             />
            </Tooltip>,
         ]}>
       <Meta avatar={

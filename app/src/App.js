@@ -20,6 +20,7 @@ class App extends Component {
     if(!value) {
       return
     } else {
+      value = value.replace(/\s/g, "");
       axios.get(`https://wind-bow.glitch.me/twitch-api/channels/${value}`)
            .then(data => this.setState({
              user: data.data,
@@ -32,7 +33,7 @@ class App extends Component {
   }
 
   render() {
-    const userSearch = (value) => this.userSearch(value);
+    const userSearch = value => this.userSearch(value);
     return (
     <div className="App">
       <SearchBar onUserSearch={userSearch}/>
