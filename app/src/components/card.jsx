@@ -15,7 +15,7 @@ class UserCard extends Component {
       description={user.message}
       type="error"
       closable
-    />
+      />
       )
     }
 
